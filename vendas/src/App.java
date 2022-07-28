@@ -31,14 +31,14 @@ public class App {
 
        Venda venda1 = new Venda(usuario2, Arrays.asList(
         new ItemVenda(produto1, 2),
-        new ItemVenda(produto2,  5),
-        new ItemVenda(produto3,  4),
+        new ItemVenda(produto2,  1),
+        new ItemVenda(produto3,  2),
         new ItemVenda(produto4,  1)
       ));
 
       Venda venda2 = new Venda(usuario3, Arrays.asList(
-        new ItemVenda(produto2, 10),
-        new ItemVenda(produto3,  20)
+        new ItemVenda(produto2, 1),
+        new ItemVenda(produto3,  1)
       ));
       List<Venda> vendas = Arrays.asList(venda, venda1, venda2);
 

@@ -6,14 +6,22 @@ public class Produto {
     
     private String descricao;
     private Double valorCompra;
+    private Integer quantidadeEstoque;
 
-    
 
 
     public Produto(String descricao, Double valorCompra) {
         this.descricao = descricao;
-
         this.valorCompra = valorCompra;
+        this.quantidadeEstoque = 10;
+    }
+
+    public Integer getQuantidadeEstoque() {
+        return quantidadeEstoque;
+    }
+
+    public void setQuantidadeEstoque(Integer quantidadeEstoque) {
+        this.quantidadeEstoque = quantidadeEstoque;
     }
 
     public String getDescricao() {
@@ -30,14 +38,12 @@ public class Produto {
         this.valorCompra = valorCompra;
     }
 
-
-    
     @Override
     public String toString() {
-        return "Produto: \n Descricao=" + descricao + ", valorCompra="
-                + valorCompra + "\n\n";
+        return "\n\nProduto{" +
+                "descricao='" + descricao + '\'' +
+                ", valorCompra=" + valorCompra +
+                ", quantidadeEstoque=" + quantidadeEstoque +
+                '}';
     }
-
-    
-
 }

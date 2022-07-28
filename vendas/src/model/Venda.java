@@ -41,12 +41,21 @@ public class Venda {
 
     public void fecharVenda(){
         Double total = totalizar();
+        atualizarEstoque();
         System.out.println("==============================================");
         System.out.println("Compra feita por " + this.usuario.getNome() + " no dia " + this.dataVenda);
         this.itens.stream()
-                    .map(item -> "\n\nItem: " + item.getProduto().getDescricao() + ", valor: " + item.getProduto().getValorCompra() + ", quantidade: " + item.getQuantidade())
+                    .map(item -> "\n\nItem: " + item.getProduto().getDescricao() + ", valor: " + item.getProduto().getValorCompra() + ", quantidade: " + item.getQuantidade()
+                    )
                     .forEach(System.out::println);
         System.out.println("\n\n O valor da compra ficou em R$" + total);
+    }
+
+    private void atualizarEstoque() {
+        for(ItemVenda item : itens){
+            Integer novoEstoque = item.getProduto().getQuantidadeEstoque() - item.getQuantidade();
+            item.getProduto().setQuantidadeEstoque(novoEstoque);
+        }
     }
 
 
