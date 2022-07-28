@@ -42,7 +42,7 @@ public class Venda {
     public void fecharVenda(){
         Double total = totalizar();
         System.out.println("==============================================");
-        System.out.println("Compra feita por: " + this.usuario.getNome() + "no dia " + this.dataVenda);
+        System.out.println("Compra feita por " + this.usuario.getNome() + " no dia " + this.dataVenda);
         this.itens.stream()
                     .map(item -> "\n\nItem: " + item.getProduto().getDescricao() + ", valor: " + item.getProduto().getValorCompra() + ", quantidade: " + item.getQuantidade())
                     .forEach(System.out::println);
